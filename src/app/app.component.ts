@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from './services/login.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ps-wod-frontend';
+  constructor(private userLogService: LoginService){}
+  
+  isLogged(){
+    return this.userLogService.isAuthenticated()
+  }
+  loggedId(){
+    return this.userLogService.getUserLoggedId()
+  }
 }

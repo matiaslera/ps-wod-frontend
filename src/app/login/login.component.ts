@@ -28,16 +28,19 @@ export class LoginComponent implements OnInit {
     return this.loginForm.controls[controlName].hasError(errorName)
   }
 
-  async authenticate() {
-    try{
-      await this.userLogService.authenticate(this.userCredentials)
-      this.router.navigate(['home/vuelos'])
-    }
-    catch(e){
-      e.error
-    }
-
+ // async authenticate() {
+  //  try{
+   //   await this.userLogService.authenticate(this.userCredentials)
+    //  this.router.navigate(['home/vuelos'])
+   // }
+   // catch(e){
+    //  e.error
+    //}
+  //}
+   authenticate() {
+      this.router.navigate(['home'])
   }
+
   formHasData(){
     return this.loginForm.status == 'INVALID'
   }

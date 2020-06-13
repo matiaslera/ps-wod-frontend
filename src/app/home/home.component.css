@@ -1,0 +1,19 @@
+.navbar-default{
+    padding: 60px;
+    height: 100%;
+    align-content: center;
+
+}
+
+.btn-toolbar .btn{
+    margin: 10px;
+}
+
+.sidenavContainer{
+    position: absolute;
+      top: 4rem;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #eee;
+    }

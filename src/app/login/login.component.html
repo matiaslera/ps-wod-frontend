@@ -30,12 +30,12 @@
     </div --->
     
 <div class="container">
-    <div class="d-flex justify-content-center h-100">
+    <div class=" justify-content-center">
 		<div class="card"> 
 			<div class="card-header">
 				<h3>Iniciar sesion</h3>
 			</div>
-    <form action="action_page.php" method="post">
+    <form action="action_page.php" [formGroup]="loginForm">
         <div class="imgcontainer">
           <img     src="https://dcassetcdn.com/design_img/2958933/496643/496643_16302248_2958933_e0b3fc15_image.jpg"
           alt="Avatar" class="avatar">
@@ -43,14 +43,14 @@
       
         <div class="container">
           <label for="uname"><b>Usuario</b></label>
-          <input type="text" placeholder="Enter Username" name="uname" required>
+          <input type="text" class="form-control" placeholder="username" formControlName="username" [(ngModel)]="userCredentials.idUsuario">		
       
           <label for="psw"><b>Contraseña</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" required>
+          <input type="password" class="form-control" placeholder="password" formControlName="password" [(ngModel)]="userCredentials.password">
       
-          <button type="submit">Ingresar</button>
+          <button class="btn btn-lg btn-primary btn-block" type="submit"  (click)="authenticate()" [disabled]="formHasData()" >Ingresar</button>
           <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
+            <input type="checkbox" checked="checked" name="remember"> Recordar
           </label>
         </div>
       
