@@ -1,13 +1,10 @@
 
 export class Usuario {
     id: number;
-    idUsuario: string;
-    nombre: string;
-    apellido: string;
-    password: string;
-    saldo: number;
-    edad: number;
-    pathImagen: string;
+    usuario: string;
+    nombreyApellido: string;
+    contrasenia: string;
+   
 
         
     static fromJson(usuarioJSON): Usuario {

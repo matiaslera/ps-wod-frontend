@@ -28,17 +28,14 @@ export class LoginComponent implements OnInit {
     return this.loginForm.controls[controlName].hasError(errorName)
   }
 
- // async authenticate() {
-  //  try{
-   //   await this.userLogService.authenticate(this.userCredentials)
-    //  this.router.navigate(['home/vuelos'])
-   // }
-   // catch(e){
-    //  e.error
-    //}
-  //}
-   authenticate() {
-      this.router.navigate(['home'])
+  async authenticate() {
+    try{
+     await this.userLogService.authenticate(this.userCredentials)
+    this.router.navigate(['home'])
+    }
+    catch(e){
+      e.error
+    }
   }
 
   formHasData(){

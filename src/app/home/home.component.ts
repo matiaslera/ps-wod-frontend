@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../services/login.service';
+import { isUndefined } from 'util';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private user:LoginService) { }
 
   ngOnInit(): void {
   }
 
+  userName(){
+    if(!isUndefined(this.user.getUser())){
+      return this.user.getUser().nombreyApellido
+  }
+  }
 }

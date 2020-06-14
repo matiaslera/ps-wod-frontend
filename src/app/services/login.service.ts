@@ -27,5 +27,6 @@ export class LoginService {
   isAuthenticated() {
     return !isUndefined(this.userLogged.id)
   }
+  
 
 }
