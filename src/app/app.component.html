@@ -3,16 +3,16 @@
 
 <div class="toolbar" role="banner">
   <img
-    alt="Angular Logo"
+    alt=" Logo"
     src="https://w7.pngwing.com/pngs/961/228/png-transparent-claw-hammer-nail-cartoon-hammers-angle-hammer-framing-hammer.png"
-    width="50rem" routerLink="home"
+    width="50rem" routerLink="login"
   />
-  <span routerLink="home">Usuario</span>
+  <span routerLink="home/perfil">Usuario</span>
   <div class="spacer"></div>
 
- 
   <span class="mainToolbarSpacer"></span>
-  <span *ngIf="isLogged()">
+  <!---span *ngIf="isLogged()"-->
+    <span *ngIf="false">
     <a button routerLink="home">
       Home
     </a>
@@ -21,6 +21,7 @@
     </a>
   </span>
 
+  
 </div>
 </nav>
 

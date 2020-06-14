@@ -3,12 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'perfil', component: PerfilComponent },
+  { path: 'home', component: HomeComponent,
+  children: [
+    {path: 'perfil', component: PerfilComponent },
+    {path: 'chat/:id', component: ChatComponent },   ] 
+},
+
 ];
 
 @NgModule({

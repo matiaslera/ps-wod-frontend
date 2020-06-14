@@ -15,5 +15,9 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: #eee;
+      background: rgb(255, 255, 255);
     }
+
+.sidenav{
+    background: rgb(255, 245, 160);
+}

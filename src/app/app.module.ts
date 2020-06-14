@@ -13,13 +13,15 @@ import { HomeComponent } from './home/home.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    PerfilComponent
+    PerfilComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,7 @@ import { MaterialModule } from './material.module';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [LoginService],
   bootstrap: [AppComponent]

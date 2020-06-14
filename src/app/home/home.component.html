@@ -2,48 +2,49 @@
 <span layout="row"></span>
 <hr flex/><hr flex/>
 <mat-divider></mat-divider>
-     <mat-sidenav-container class="sidenavContainer">
+ <mat-sidenav-container class="sidenavContainer">
      <mat-sidenav #sidenav mode="side" class="sidenav" opened>
             <mat-nav-list>
-                 <mat-list-item routerLink="/perfil" routerLinkActive="active">
-                     <mat-icon mat-list-icon>people_alt</mat-icon>
-                       <div> Perfil</div>
-                  </mat-list-item>
-                <mat-list-item routerLink="./misequipos" routerLinkActive="active">
-                          <mat-icon mat-list-icon>group_work</mat-icon>
+                        <mat-list-item routerLink="perfil" routerLinkActive="active">
+                            <mat-icon mat-list-icon>people_alt</mat-icon>
+                            <div> Perfil</div>
+                            </mat-list-item>
+
+                       <mat-list-item routerLink="" routerLinkActive="active">
+                          <mat-icon mat-list-icon>find_in_page</mat-icon>
                           <div>Buscar</div>
-                      </mat-list-item>
-                <mat-list-item routerLink="" routerLinkActive="active">
-                        <mat-icon mat-list-icon>people_alt</mat-icon>
-                       <div> Chat</div>
-                   </mat-list-item>
-                <mat-list-item routerLink="" routerLinkActive="active">
-                    <mat-icon mat-list-icon>people_alt</mat-icon>
-                   <div> Obtener Presupuesto</div>
-               </mat-list-item>
+                          </mat-list-item>
 
-               <mat-list-item routerLink="" routerLinkActive="active">
-                <mat-icon mat-list-icon>people_alt</mat-icon>
-               <div> Trabajo Finalizado</div>
-           </mat-list-item>
-           <mat-list-item routerLink="" routerLinkActive="active">
-            <mat-icon mat-list-icon>people_alt</mat-icon>
-           <div> Trabajo Pendiente</div>
-                 </mat-list-item>
+                        <mat-list-item routerLink="./chat/1" routerLinkActive="active">
+                            <mat-icon mat-list-icon>chat</mat-icon>
+                            <div> Chat</div>
+                            </mat-list-item>
 
+                        <mat-list-item routerLink="" routerLinkActive="active">
+                             <mat-icon mat-list-icon>create</mat-icon>
+                             <div> Obtener Presupuesto</div>
+                             </mat-list-item>
 
-                  </mat-nav-list>
-              </mat-sidenav>
-              <mat-sidenav-content>
+                        <mat-list-item routerLink="" routerLinkActive="active">
+                            <mat-icon mat-list-icon>work</mat-icon>
+                            <div> Trabajo Finalizado</div>
+                            </mat-list-item>
+
+                        <mat-list-item routerLink="" routerLinkActive="active">
+                            <mat-icon mat-list-icon>work_off</mat-icon>
+                            <div> Trabajo Pendiente</div>
+                            </mat-list-item>
+             </mat-nav-list>
+     </mat-sidenav>
+
+        <mat-sidenav-content>
                   <button mat-icon-button color=primary (click)="sidenav.toggle()">
                       <mat-icon>menu</mat-icon>
                   </button>
-                  <span>
                       <router-outlet></router-outlet>
-                  </span>
-              </mat-sidenav-content>
-          </mat-sidenav-container>
- <mat-divider></mat-divider>
+            </mat-sidenav-content>
+ </mat-sidenav-container>
+<mat-divider></mat-divider>
 
 
  <mat-sidenav-container class="sidenavContainer" *ngIf="false">
