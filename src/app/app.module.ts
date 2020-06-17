@@ -14,6 +14,7 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ChatComponent } from './chat/chat.component';
+import { PresupuestoComponent } from './presupuesto/presupuesto.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ChatComponent } from './chat/chat.component';
     LoginComponent,
     HomeComponent,
     PerfilComponent,
-    ChatComponent
+    ChatComponent,
+    PresupuestoComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ChatComponent } from './chat/chat.component';
+import { PresupuestoComponent } from './presupuesto/presupuesto.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,9 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent,
   children: [
     {path: 'perfil', component: PerfilComponent },
-    {path: 'chat/:id', component: ChatComponent },   ] 
+    {path: 'chat/:id', component: ChatComponent },
+    {path: 'presupuesto', component: PresupuestoComponent },
+     ] 
 },
 
 ];
