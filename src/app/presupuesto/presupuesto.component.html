@@ -3,26 +3,26 @@
       <h4 class="card-title">Obtener Presupuesto</h4>
       <form [formGroup]="busquedaForm" (ngSubmit)="buscar()">
         <div class="form-row">
-            <div class="form-group col-md-4" formGroupName="asiento">
-                <label for="clase">Especialidad</label>
-                <select class="form-control" formControlName="clase" required>
-                  <option [value]="especialidad" *ngFor="let item of especialidad">{{item}}</option>
+            <div class="form-group col-md-4">
+                <label for="especialidad">Especialidad</label>
+                <select class="form-control" formControlName="especialidad" required>
+                  <option [value]="item" *ngFor="let item of especialidad">{{item}}</option>
                 </select>
               </div>
           <div class="md-form" class="form-group col-md-4">
-            <label for="origen">Problema</label>
+            <label for="problema">Problema</label>
             <input type="text" class="form-control" formControlName="problema" placeholder="Ingrese el problema" required>
           </div>
         </div>
  
       </form>
     </div>
-    <button type="submit" class="btn btn-outline-primary">Buscar</button>  &nbsp; 
-    <button type="submit" class="btn btn-outline-primary" >Limpiar Campo </button> &nbsp;
-    <button type="submit" class="btn btn-outline-primary" >Consultar Presupuesto </button>
+    <button type="submit" class="btn btn-outline-primary"  (click)="buscar()">Buscar</button>  &nbsp; 
+    <button type="submit" class="btn btn-outline-primary" (click)="clear()" >Limpiar Campo </button> &nbsp;
+    <button type="submit" class="btn btn-outline-primary"  (click)="create(null)" >Consultar Presupuesto </button>
     
     
-    <!---div class="container m-1">
+    <div class="container m-1">
       <div class="abs-center">
         <table class="table table-sm table-dark">
           <thead>
@@ -31,20 +31,14 @@
               <th scope="col">Especialidad</th>
               <th scope="col">Fecha </th>
               <th scope="col">Monto</th>
-              <th scope="col">Escala</th>
-              <th scope="col">Duracion</th>
-              <th scope="col">Desde</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let vuelo of vuelos" [class.selected]="vuelo === vueloSelecionado" (click)="onSelect(vuelo)">
-              <th scope="row">{{vuelo.origen}}</th>
-              <td>{{vuelo.destino}}</td>
-              <td>{{vuelo.aerolineaNombre}}</td>
-              <td>{{vuelo.fechaDeSalida.year + "/" + vuelo.fechaDeSalida.monthValue + "/" + vuelo.fechaDeSalida.dayOfMonth  }}</td>
-              <td>{{vuelo.escala}}</td>
-              <td>{{vuelo.duracion}}</td>
-              <td>{{vuelo.menorPrecio | currency: 'USD' }}</td>
+            <tr *ngFor="let problema of problemas">
+              <td>{{problema.nombre}}</td>
+              <td>{{problema.especialidad}}</td>
+              <td>{{problema.fecha.year + "/" + problema.fecha.monthValue + "/" + problema.fecha.dayOfMonth  }}</td>
+              <td>{{problema.monto | currency: 'USD' }}</td>
             </tr>
           </tbody>
         </table>
@@ -52,9 +46,7 @@
     </div>
     
     
-    <div *ngIf="vueloSelecionado">
-    </div--->
-    
+
     
     <!---div class="form-row container">
     

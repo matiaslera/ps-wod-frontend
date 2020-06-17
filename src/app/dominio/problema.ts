@@ -1,13 +1,14 @@
 
-export class Problema {
+export class Presupuesto {
     id: number;
     nombre: string;
     especialidad: string;
+    descripcion: string;
     monto: number;
     fecha: Date;
-
-        
-    static fromJson(problemJSON): Problema {
-        return Object.assign(new Problema(), problemJSON)
+    notas: string;
+	 
+    static fromJson(problemJSON): Presupuesto {
+        return Object.assign(new Presupuesto(), problemJSON)
     }
 }
