@@ -7,6 +7,7 @@ import * as _ from 'lodash'
 import { Router } from '@angular/router'
 import { MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import { AddPresupuestoComponent } from '../add-presupuesto/add-presupuesto.component';
+import { ProfileService } from '../services/perfil.service';
 
 @Component({
   selector: 'app-presupuesto',
@@ -25,7 +26,8 @@ export class PresupuestoComponent implements OnInit {
 
   problemas:Presupuesto[];
 
-  constructor(private builder: FormBuilder, private presService:PresupuestoService,public dialog: MatDialog ) { }
+  constructor(private builder: FormBuilder, private presService:PresupuestoService,private profileService: ProfileService,
+    public dialog: MatDialog ) { }
 
   ngOnInit(): void {
     this.getPresupuestos()
@@ -55,11 +57,17 @@ export class PresupuestoComponent implements OnInit {
     });
   
   }
-  create(equipoId){
+  create(){
     const dialogRef = this.dialog.open(AddPresupuestoComponent, {
-      data: equipoId })
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) { this.getPresupuestos() }
-    })
+      height: '600px',
+      width: '700px',
+      data: {especialidad:this.busquedaForm.get('especialidad').value,
+        problema:  this.busquedaForm.get('problema').value} })
+  
+  }
+
+  esCliente():boolean{
+    this.profileService.tipo()
+    return this.profileService.esCliente
   }
 }

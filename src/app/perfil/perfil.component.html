@@ -1,13 +1,14 @@
 
 <div class="container"> 
-   <h2> ESTA ES LA PANTALLA DE PERFIL de {{userName()}} </h2>
+   <h2> BIENVENIDO {{userName()}} A WOD (work of day)</h2>
 
 
 </div>
 
 <div class="cardContainer">
    <mat-card class="dataCard" *ngIf="perfilData | async as perfilData;">
-     <img src="../../assets/perfil-avatar.jpg" width="250rem">
+     <img src="../../assets/perfil-avatar.jpg" width="250rem" *ngIf="!esProfesional()">
+     <img src="../../assets/perfil-profe.jpg" width="250rem" *ngIf="esProfesional()">
      <mat-card-header>
        <mat-card-title>
          USARIO: {{perfilData.usuario}}
@@ -22,9 +23,6 @@
      </mat-card-header>
      <mat-card-content>
        <strong>Tipo: </strong>{{tipo()}}<br>
-       <!---strong>Poder de ataque: </strong>{{perfilData.poderDeAtaque| number:'1.2-2':'es'}}<br>
-       <strong>XP: </strong>{{perfilData.experiencia| number:'1.2-2':'es'}}<br>
-       <strong>Efectividad: </strong>{{perfilData.efectividad | number:'1.2-2':'es'}}<br---->
      </mat-card-content>
    </mat-card>
   

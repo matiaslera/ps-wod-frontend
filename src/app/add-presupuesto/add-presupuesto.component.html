@@ -1,34 +1,31 @@
-<form role="form">
+<form [formGroup]="busquedaForm" (ngSubmit)="enviarConsulta   ()">
 
     <div class="form-group">
-        <label for="ejemplo_password_1">Especialidad</label>
-        <input type="text" class="form-control" id="ejemplo_password_1"  placeholder="Especialidad">
+        <label for="ejemplo_password_1">  <strong>Especialidad: </strong></label>
+        <input type="text" class="form-control" formControlName="especialidad"  placeholder="Especialidad">
       </div>
 
       <div class="form-group">
-        <label for="ejemplo_password_1">Problema</label>
-        <input type="text" class="form-control" id="ejemplo_password_1"  placeholder="titulo del problema">
+        <label for="ejemplo_password_1"><strong>Problema: </strong></label>
+        <input type="text" class="form-control"  formControlName="problema" placeholder="titulo del problema" >
       </div>
 
     <div class="form-group">
-        <label for="ejemplo_password_1">Direccion</label>
-        <input type="text" class="form-control" id="ejemplo_password_1"  placeholder="Direccion">
+        <label for="ejemplo_password_1"><strong>Direccion: </strong></label>
+        <input type="text" class="form-control" formControlName="direccion"  placeholder="Direccion">
       </div>
 
+      <label for="ejemplo_email_1"> <strong>Descripcion: </strong></label>
     <div class="form-group">
-      <label for="ejemplo_email_1">Descripcion</label>
-      <input type="text" class="form-control"    placeholder="Introduce la descripcion del problema">
+      <textarea name="texto" rows="3" cols="50" formControlName="descripcion" placeholder="Introduce la descripcion del problema"></textarea>
     </div>
-   
+
+    <label for="ejemplo_archivo_1">Adjuntar un archivo</label>
     <div class="form-group">
-      <label for="ejemplo_archivo_1">Adjuntar un archivo</label>
       <input type="file" id="ejemplo_archivo_1">
-      <p class="help-block">Ejemplo de texto de ayuda.</p>
     </div>
-    <div class="checkbox">
-      <label>
-        <input type="checkbox"> Activa esta casilla
-      </label>
-    </div>
-    <button type="submit" class="btn btn-default">Enviar</button>
   </form>
+
+  <button type="submit" class="btn btn-outline-primary"  (click)="cancelar()">Cancelar</button>  &nbsp; 
+    <button type="submit" class="btn btn-outline-primary" (click)="enviarConsulta()" >Enviar Consulta </button> &nbsp;
+ 

@@ -13,9 +13,7 @@ import { ProfileService } from '../services/perfil.service';
 export class PerfilComponent implements OnInit {
 
   perfilData: Observable<{}>
-  profesionales:Usuario[]
-  clientes:Usuario[]
-  constructor(private user:LoginService,private profileService: ProfileService, private route: ActivatedRoute, private loginService: LoginService) { }
+  constructor(private user:LoginService,private profileService: ProfileService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.userName()
@@ -33,10 +31,25 @@ export class PerfilComponent implements OnInit {
   }
 
   tipo(){
-    return this.profileService.tipo()
+    if(this.esCliente()) {
+      return "Cliente"
+    }
+    if(this.esProfesional()){
+      return "Profesional"
   }
+}
 
   esProfesional():boolean{
-    return this.tipo()==="Profesional"
+    this.profileService.tipo()
+    if (this.profileService.esCliente){
+      return false
+    }
+    return true
   }
+
+  esCliente():boolean{
+    this.profileService.tipo()
+    return this.profileService.esCliente
+  }
+
 }

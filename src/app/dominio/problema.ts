@@ -1,7 +1,7 @@
 
 export class Presupuesto {
     id: number;
-    nombre: string;
+    problema: string;
     especialidad: string;
     descripcion: string;
     monto: number;

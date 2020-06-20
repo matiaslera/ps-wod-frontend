@@ -19,7 +19,7 @@
     </div>
     <button type="submit" class="btn btn-outline-primary"  (click)="buscar()">Buscar</button>  &nbsp; 
     <button type="submit" class="btn btn-outline-primary" (click)="clear()" >Limpiar Campo </button> &nbsp;
-    <button type="submit" class="btn btn-outline-primary"  (click)="create(null)" >Consultar Presupuesto </button>
+    <button type="submit" class="btn btn-outline-primary"  (click)="create()" *ngIf="esCliente()" >Consultar Presupuesto </button>
     
     
     <div class="container m-1">
@@ -35,7 +35,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let problema of problemas">
-              <td>{{problema.nombre}}</td>
+              <td>{{problema.problema}}</td>
               <td>{{problema.especialidad}}</td>
               <td>{{problema.fecha.year + "/" + problema.fecha.monthValue + "/" + problema.fecha.dayOfMonth  }}</td>
               <td>{{problema.monto | currency: 'USD' }}</td>
@@ -46,33 +46,3 @@
     </div>
     
     
-
-    
-    <!---div class="form-row container">
-    
-      <div class="form-group col-12">
-        <button type="button" class="btn btn-outline-primary col-12"
-          (click)="addToCart(vueloSelecionado,asientoSeleccionado)">Agregar Al carrito</button> <br>
-      </div>
-    
-    </div>
-    
-    <div class="form-row container">
-    
-      <div class="form-group col-md-6">
-        <label> En el carrito : {{cantidadPasajes()}}</label>
-      </div>
-    
-    </div>
-    
-    <div class="form-row container ">
-    
-      <div class="col-md-6">
-        <label> Total en el carrito: {{  montoCarrito()}}</label>
-      </div>
-    
-      <div class="col-md-4">
-        <a type="button" routerLink="../ticket"  routerLinkActive="active" class="btn btn-outline-primary">Finalizar compra</a>
-      </div>
-    </div>
-    </div---->

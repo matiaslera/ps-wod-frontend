@@ -16,6 +16,8 @@ import { MaterialModule } from './material.module';
 import { ChatComponent } from './chat/chat.component';
 import { PresupuestoComponent } from './presupuesto/presupuesto.component';
 import { AddPresupuestoComponent } from './add-presupuesto/add-presupuesto.component';
+import { ProfileService } from './services/perfil.service';
+import { PresupuestoService } from './services/presupuesto.services';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,7 @@ import { AddPresupuestoComponent } from './add-presupuesto/add-presupuesto.compo
     BrowserAnimationsModule,
     MaterialModule,
   ],
-  providers: [LoginService],
+  providers: [LoginService,ProfileService,PresupuestoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

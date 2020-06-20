@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   constructor(private user:LoginService,private profileService: ProfileService) { }
 
   ngOnInit(): void {
+    this.esProfesional()
   }
 
   userName(){
@@ -27,7 +28,16 @@ export class HomeComponent implements OnInit {
   }
   }
 
-  esProfesional(){
-   return this.profileService.esProfesional()
+  esProfesional():boolean{
+    this.profileService.tipo()
+    if (this.profileService.esCliente){
+      return false
+    }
+    return true
+  }
+
+  esCliente():boolean{
+    this.profileService.tipo()
+    return this.profileService.esCliente
   }
 }

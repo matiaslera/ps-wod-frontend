@@ -2,7 +2,7 @@
 <span layout="row"></span>
 <hr flex/><hr flex/>
 <mat-divider></mat-divider>
- <mat-sidenav-container class="sidenavContainer"  *ngIf="!esProfesional()">
+ <mat-sidenav-container class="sidenavContainer"  *ngIf="esCliente()">
      <mat-sidenav #sidenav mode="side" class="sidenav" opened>
             <mat-nav-list>
                         <mat-list-item [routerLink]= "['./perfil',userId()]"  routerLinkActive="active">
@@ -10,7 +10,7 @@
                             <div> Perfil</div>
                             </mat-list-item>
 
-                       <mat-list-item routerLink="" routerLinkActive="active">
+                       <mat-list-item routerLink="#" routerLinkActive="active">
                           <mat-icon mat-list-icon>find_in_page</mat-icon>
                           <div>Buscar</div>
                           </mat-list-item>
@@ -25,12 +25,12 @@
                              <div> Obtener Presupuesto</div>
                              </mat-list-item>
 
-                        <mat-list-item routerLink="" routerLinkActive="active">
+                        <mat-list-item routerLink="#" routerLinkActive="active">
                             <mat-icon mat-list-icon>work</mat-icon>
                             <div> Trabajo Finalizado</div>
                             </mat-list-item>
 
-                        <mat-list-item routerLink="" routerLinkActive="active">
+                        <mat-list-item routerLink="#" routerLinkActive="active">
                             <mat-icon mat-list-icon>work_off</mat-icon>
                             <div> Trabajo Pendiente</div>
                             </mat-list-item>
@@ -50,30 +50,30 @@
  <mat-sidenav-container class="sidenavContainer" *ngIf="esProfesional()">
     <mat-sidenav #sidenav mode="side" class="sidenav" opened>
            <mat-nav-list>
-                <mat-list-item routerLink="/perfil" routerLinkActive="active">
+                <mat-list-item [routerLink]= "['./perfil',userId()]" routerLinkActive="active">
                     <mat-icon mat-list-icon>people_alt</mat-icon>
-                      <div> Perfil2222</div>
+                      <div> Perfil</div>
                  </mat-list-item>
-               <mat-list-item routerLink="./misequipos" routerLinkActive="active">
+               <!---mat-list-item routerLink="" routerLinkActive="active">
                          <mat-icon mat-list-icon>group_work</mat-icon>
                          <div>Buscar2222</div>
-                     </mat-list-item>
-               <mat-list-item routerLink="" routerLinkActive="active">
-                       <mat-icon mat-list-icon>people_alt</mat-icon>
-                      <div> Chat333</div>
+                     </mat-list-item--->
+               <mat-list-item [routerLink]= "['./chat',userName()]" routerLinkActive="active">
+                       <mat-icon mat-list-icon>chat</mat-icon>
+                      <div> Chat</div>
                   </mat-list-item>
-               <mat-list-item routerLink="" routerLinkActive="active">
-                   <mat-icon mat-list-icon>people_alt</mat-icon>
-                  <div> Obtener Presupuesto</div>
+               <mat-list-item routerLink="#" routerLinkActive="active">
+                   <mat-icon mat-list-icon>find_in_page</mat-icon>
+                  <div> Buscar</div>
               </mat-list-item>
 
-              <mat-list-item routerLink="" routerLinkActive="active">
-               <mat-icon mat-list-icon>people_alt</mat-icon>
+              <mat-list-item routerLink="#" routerLinkActive="active">
+               <mat-icon mat-list-icon>work</mat-icon>
               <div> Trabajo Finalizado</div>
           </mat-list-item>
-          <mat-list-item routerLink="" routerLinkActive="active">
-           <mat-icon mat-list-icon>people_alt</mat-icon>
-          <div> Trabajo Pendiente</div>
+          <mat-list-item routerLink="#" routerLinkActive="active">
+           <mat-icon mat-list-icon>work_off</mat-icon>
+          <div> Turnos</div>
                 </mat-list-item>
 
 
