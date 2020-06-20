@@ -6,6 +6,7 @@ import { MatDialogModule } from '@angular/material/dialog'
 import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
     imports: [
         MatSliderModule,
@@ -13,7 +14,8 @@ import {MatListModule} from '@angular/material/list';
         MatDialogModule,
         MatDividerModule,
         MatIconModule,
-        MatListModule
+        MatListModule,
+        MatCardModule
        
     ],
     exports: [
@@ -22,7 +24,8 @@ import {MatListModule} from '@angular/material/list';
         MatSidenavModule,
         MatDividerModule,
         MatIconModule,
-        MatListModule
+        MatListModule,
+        MatCardModule
     ]
 })
 export class MaterialModule { }

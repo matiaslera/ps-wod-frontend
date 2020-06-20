@@ -4,8 +4,10 @@ export class Usuario {
     usuario: string;
     nombreyApellido: string;
     contrasenia: string;
-   
-
+    dni:number;
+    fechaDeNacimiento: Date;
+    telefono:number;
+    foto:string;
         
     static fromJson(usuarioJSON): Usuario {
         return Object.assign(new Usuario(), usuarioJSON)

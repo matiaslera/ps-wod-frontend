@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { isUndefined } from 'util';
+import { ProfileService } from '../services/perfil.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { isUndefined } from 'util';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private user:LoginService) { }
+  constructor(private user:LoginService,private profileService: ProfileService) { }
 
   ngOnInit(): void {
   }
@@ -18,5 +19,15 @@ export class HomeComponent implements OnInit {
     if(!isUndefined(this.user.getUser())){
       return this.user.getUser().nombreyApellido
   }
+  }
+
+  userId(){
+    if(!isUndefined(this.user.getUser())){
+      return this.user.getUserLoggedId()
+  }
+  }
+
+  esProfesional(){
+   return this.profileService.esProfesional()
   }
 }

@@ -1,17 +1,31 @@
-<!---div class="container">
-   <div class="personalizado">
-   <div class ="card p-5">
-    <h4>Escribe tu usuario y unete al chat</h4>
-    <input type="text" class="from- control" [(ngModel)] ="User.name">
-    <a class="btn btn-lg btn-primary btn-block" [routerLink]= "['../chat',userName()]"> Iniciar chat</a>
-
-   </div>
-</div>
-</div------>
-
 
 <div class="container"> 
    <h2> ESTA ES LA PANTALLA DE PERFIL de {{userName()}} </h2>
 
 
 </div>
+
+<div class="cardContainer">
+   <mat-card class="dataCard" *ngIf="perfilData | async as perfilData;">
+     <img src="../../assets/perfil-avatar.jpg" width="250rem">
+     <mat-card-header>
+       <mat-card-title>
+         USARIO: {{perfilData.usuario}}
+       </mat-card-title>
+       <mat-card-subtitle>
+        NOMBRE Y APELLIDO:  {{perfilData.nombreyApellido}}
+        <br>
+         DNI: {{perfilData.dni}}
+         <br>
+         TELEFONO: {{perfilData.telefono}}
+       </mat-card-subtitle>
+     </mat-card-header>
+     <mat-card-content>
+       <strong>Tipo: </strong>{{tipo()}}<br>
+       <!---strong>Poder de ataque: </strong>{{perfilData.poderDeAtaque| number:'1.2-2':'es'}}<br>
+       <strong>XP: </strong>{{perfilData.experiencia| number:'1.2-2':'es'}}<br>
+       <strong>Efectividad: </strong>{{perfilData.efectividad | number:'1.2-2':'es'}}<br---->
+     </mat-card-content>
+   </mat-card>
+  
+ </div>

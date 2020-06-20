@@ -10,7 +10,6 @@ import { LoginService } from './login.service';
   providedIn: 'root'
 })
 export class PresupuestoService {
- //private userLogged: Usuario = new Usuario
 
  basePresupuestos: Presupuesto[] ;
  constructor(private http: HttpClient, private login:LoginService) {}

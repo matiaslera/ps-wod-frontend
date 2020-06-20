@@ -2,10 +2,10 @@
 <span layout="row"></span>
 <hr flex/><hr flex/>
 <mat-divider></mat-divider>
- <mat-sidenav-container class="sidenavContainer">
+ <mat-sidenav-container class="sidenavContainer"  *ngIf="!esProfesional()">
      <mat-sidenav #sidenav mode="side" class="sidenav" opened>
             <mat-nav-list>
-                        <mat-list-item routerLink="perfil" routerLinkActive="active">
+                        <mat-list-item [routerLink]= "['./perfil',userId()]"  routerLinkActive="active">
                             <mat-icon mat-list-icon>people_alt</mat-icon>
                             <div> Perfil</div>
                             </mat-list-item>
@@ -47,7 +47,7 @@
 <mat-divider></mat-divider>
 
 
- <mat-sidenav-container class="sidenavContainer" *ngIf="false">
+ <mat-sidenav-container class="sidenavContainer" *ngIf="esProfesional()">
     <mat-sidenav #sidenav mode="side" class="sidenav" opened>
            <mat-nav-list>
                 <mat-list-item routerLink="/perfil" routerLinkActive="active">
