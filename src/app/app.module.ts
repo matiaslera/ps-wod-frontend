@@ -18,6 +18,9 @@ import { PresupuestoComponent } from './presupuesto/presupuesto.component';
 import { AddPresupuestoComponent } from './add-presupuesto/add-presupuesto.component';
 import { ProfileService } from './services/perfil.service';
 import { PresupuestoService } from './services/presupuesto.services';
+import { TrabajoComponent } from './trabajo/trabajo.component';
+import { TrabajoPendienteComponent } from './trabajo-pendiente/trabajo-pendiente.component';
+import { TrabajoTerminadoComponent } from './trabajo-terminado/trabajo-terminado.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { PresupuestoService } from './services/presupuesto.services';
     PerfilComponent,
     ChatComponent,
     PresupuestoComponent,
-    AddPresupuestoComponent
+    AddPresupuestoComponent,
+    TrabajoComponent,
+    TrabajoPendienteComponent,
+    TrabajoTerminadoComponent
   ],
   imports: [
     BrowserModule,

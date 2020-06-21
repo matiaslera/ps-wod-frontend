@@ -3,6 +3,7 @@ import { LoginService } from '../services/login.service'
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { Usuario } from '../dominio/usuario'
 import { Router } from '@angular/router'
+import { isUndefined } from 'util';
 
 @Component({
   selector: 'app-login',
@@ -31,7 +32,7 @@ export class LoginComponent implements OnInit {
   async authenticate() {
     try{
      await this.userLogService.authenticate(this.userCredentials)
-    this.router.navigate(['home'])
+    this.router.navigate(['home/perfil/',this.userId()])
     }
     catch(e){
       e.error
@@ -54,6 +55,10 @@ export class LoginComponent implements OnInit {
     return this.loginForm.get('password').value
   }
   
-
+  userId(){
+    if(!isUndefined(this.userLogService.getUser())){
+      return this.userLogService.getUserLoggedId()
+  }
+  }
 
 }

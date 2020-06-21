@@ -4,6 +4,7 @@ export class Presupuesto {
     problema: string;
     especialidad: string;
     descripcion: string;
+    direccion: string;
     monto: number;
     fecha: Date;
     notas: string;

@@ -1,0 +1,6 @@
+<table>
+    <mat-divider></mat-divider>
+    <div *ngFor="let elemento of trabajos"> <!--- [routerLink]="['/reservarHotel', elemento.id]"> --> 
+     <app-trabajo [consulta]="elemento"></app-trabajo>
+   </div>
+</table>
