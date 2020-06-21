@@ -1,6 +1,7 @@
 <table>
     <mat-divider></mat-divider>
-    <div *ngFor="let elemento of trabajos"> <!--- [routerLink]="['/reservarHotel', elemento.id]"> --> 
+    <h4 *ngIf="noTieneTrabajos()">  NOO TIENE CARGADO NINGUN PRESUPUESTO CARGADOS</h4>
+    <div *ngFor="let elemento of trabajos" [routerLink]="['../jobDetails', elemento.id]"> 
      <app-trabajo [consulta]="elemento"></app-trabajo>
    </div>
 </table>

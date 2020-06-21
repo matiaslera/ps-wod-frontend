@@ -8,13 +8,9 @@ import { Presupuesto } from '../dominio/problema';
 })
 export class TrabajoComponent implements OnInit {
 
-  nombre
-  calificacion
-  precio
-  ubicacion
+
   @Input() consulta: Presupuesto
   @Input() reservacion:boolean
-  precioEconomico: number
   constructor() { }
 
   ngOnInit(): void {

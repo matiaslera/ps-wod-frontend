@@ -7,6 +7,7 @@ import { ChatComponent } from './chat/chat.component';
 import { PresupuestoComponent } from './presupuesto/presupuesto.component';
 import { TrabajoPendienteComponent } from './trabajo-pendiente/trabajo-pendiente.component';
 import { TrabajoTerminadoComponent } from './trabajo-terminado/trabajo-terminado.component';
+import { JobDetailsComponent } from './job-details/job-details.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
     {path: 'presupuesto', component: PresupuestoComponent },
     {path: 'trabajoPendiente', component: TrabajoPendienteComponent},
     {path: 'trabajoTerminado', component: TrabajoTerminadoComponent},
+    {path: 'jobDetails/:id', component: JobDetailsComponent},
     { path: '', redirectTo: 'presupuesto', pathMatch: 'full' },
      ] 
 },

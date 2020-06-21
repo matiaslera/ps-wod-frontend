@@ -10,10 +10,10 @@
                             <div> Perfil</div>
                             </mat-list-item>
 
-                       <mat-list-item routerLink="#" routerLinkActive="active">
+                       <!---mat-list-item routerLink="#" routerLinkActive="active">
                           <mat-icon mat-list-icon>find_in_page</mat-icon>
                           <div>Buscar</div>
-                          </mat-list-item>
+                          </mat-list-item--->
 
                         <mat-list-item [routerLink]= "['./chat',userName()]" routerLinkActive="active">
                             <mat-icon mat-list-icon>chat</mat-icon>
@@ -54,18 +54,20 @@
                     <mat-icon mat-list-icon>people_alt</mat-icon>
                       <div> Perfil</div>
                  </mat-list-item>
-               <!---mat-list-item routerLink="" routerLinkActive="active">
-                         <mat-icon mat-list-icon>group_work</mat-icon>
-                         <div>Buscar2222</div>
-                     </mat-list-item--->
+              
                <mat-list-item [routerLink]= "['./chat',userName()]" routerLinkActive="active">
                        <mat-icon mat-list-icon>chat</mat-icon>
                       <div> Chat</div>
                   </mat-list-item>
-               <mat-list-item routerLink="#" routerLinkActive="active">
+               <!---mat-list-item routerLink="#" routerLinkActive="active">
                    <mat-icon mat-list-icon>find_in_page</mat-icon>
                   <div> Buscar</div>
-              </mat-list-item>
+              </mat-list-item-->
+
+               <mat-list-item routerLink= "trabajoPendiente" routerLinkActive="active">
+                         <mat-icon mat-list-icon>group_work</mat-icon>
+                         <div>Ofertas de Trabajos</div>
+                     </mat-list-item>
 
               <mat-list-item routerLink="#" routerLinkActive="active">
                <mat-icon mat-list-icon>work</mat-icon>
@@ -75,7 +77,6 @@
            <mat-icon mat-list-icon>work_off</mat-icon>
           <div> Turnos</div>
                 </mat-list-item>
-
 
                  </mat-nav-list>
              </mat-sidenav>

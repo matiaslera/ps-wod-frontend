@@ -14,11 +14,11 @@ export class TrabajoTerminadoComponent implements OnInit {
   constructor(public trabajoServices: PresupuestoService) { }
 
   ngOnInit() {
-    this.getHotels()
+    this.getTrabajos()
     console.log(this.trabajos)
   }
 
-  async getHotels(){
+  async getTrabajos(){
     try{
     this.trabajos=await  this.trabajoServices.presupuesto()
   } catch{

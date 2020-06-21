@@ -21,6 +21,8 @@ import { PresupuestoService } from './services/presupuesto.services';
 import { TrabajoComponent } from './trabajo/trabajo.component';
 import { TrabajoPendienteComponent } from './trabajo-pendiente/trabajo-pendiente.component';
 import { TrabajoTerminadoComponent } from './trabajo-terminado/trabajo-terminado.component';
+import { JobDetailsComponent } from './job-details/job-details.component';
+import { JobAnswerComponent } from './job-answer/job-answer.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { TrabajoTerminadoComponent } from './trabajo-terminado/trabajo-terminado
     AddPresupuestoComponent,
     TrabajoComponent,
     TrabajoPendienteComponent,
-    TrabajoTerminadoComponent
+    TrabajoTerminadoComponent,
+    JobDetailsComponent,
+    JobAnswerComponent
   ],
   imports: [
     BrowserModule,

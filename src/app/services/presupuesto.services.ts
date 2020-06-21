@@ -29,4 +29,19 @@ async addPresupuesto(presupuesto:Presupuesto) {
     await  this.http.post(REST_SERVER_URL + '/new_qery/' +this.login.getUserLoggedId(), json).toPromise()
   }
 
+async consultas(): Promise<Presupuesto[]>  {
+    const basePresupuestos = await this.http.get<Presupuesto[]>(REST_SERVER_URL + '/query_made/'+this.login.getUserLoggedId()).toPromise();
+    return basePresupuestos.map((pres) => Presupuesto.fromJson(pres));
+  }
+
+async trabajoCompleto(id:number): Promise<Presupuesto>  {
+    const presupuesto = await this.http.get<Presupuesto[]>(REST_SERVER_URL + '/job_completo/'+id).toPromise();
+    return Presupuesto.fromJson(presupuesto)
+  }
+
+async consultasTecnica(): Promise<Presupuesto[]>  {
+    const basePresupuestos = await this.http.get<Presupuesto[]>(REST_SERVER_URL + '/query_tecnica/'+this.login.getUserLoggedId()).toPromise();
+    return basePresupuestos.map((pres) => Presupuesto.fromJson(pres));
+  }
+
 }
