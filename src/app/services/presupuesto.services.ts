@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { REST_SERVER_URL } from './configuration';
 import { Presupuesto } from '../dominio/problema';
 import { LoginService } from './login.service';
+import { Oferta } from '../dominio/oferta';
 
 @Injectable({
   providedIn: 'root'
@@ -44,4 +45,9 @@ async consultasTecnica(): Promise<Presupuesto[]>  {
     return basePresupuestos.map((pres) => Presupuesto.fromJson(pres));
   }
 
+  async answerConsulta(oferta:Oferta,id:Number) {
+    let json = JSON.stringify(oferta) 
+    console.log(json);
+    await  this.http.post(REST_SERVER_URL + '/job_answer/' +id, json).toPromise()
+  } 
 }

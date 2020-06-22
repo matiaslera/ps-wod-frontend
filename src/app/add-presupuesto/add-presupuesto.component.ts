@@ -3,6 +3,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import { PresupuestoComponent } from '../presupuesto/presupuesto.component';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { PresupuestoService } from '../services/presupuesto.services';
+import { LoginService } from '../services/login.service';
 
 
 
@@ -18,6 +19,7 @@ export interface DialogData {
 export class AddPresupuestoComponent {
 
   busquedaForm = this.builder.group({
+    idCreador:['', Validators.required],
     problema: ['', Validators.required],
     especialidad: ['', Validators.required],
     direccion: ['', Validators.required],
@@ -25,12 +27,13 @@ export class AddPresupuestoComponent {
   });
 
   constructor(public dialogRef: MatDialogRef<PresupuestoComponent>,private builder: FormBuilder,private presupuetoSer:PresupuestoService,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData)  { 
+    @Inject(MAT_DIALOG_DATA) public data: DialogData,private profileService: LoginService)  { 
       this.updateFrom()
     }
 
     updateFrom() {
       this.busquedaForm.patchValue({
+        idCreador: this.profileService.getUserLoggedId(),
         problema: this.data.problema,
         especialidad: this.data.especialidad
       });
