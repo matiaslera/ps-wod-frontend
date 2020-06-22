@@ -11,7 +11,7 @@
      <img src="../../assets/perfil-profe.jpg" width="250rem" *ngIf="esProfesional()">
      <mat-card-header>
        <mat-card-title>
-         USARIO: {{perfilData.usuario}}
+         USUARIO: {{perfilData.usuario}}
        </mat-card-title>
        <mat-card-subtitle>
         NOMBRE Y APELLIDO:  {{perfilData.nombreyApellido}}
@@ -19,6 +19,8 @@
          DNI: {{perfilData.dni}}
          <br>
          TELEFONO: {{perfilData.telefono}}
+         <br>
+         <strong *ngIf="esProfesional()">  Especialidad: {{perfilData.profesion }} </strong>
        </mat-card-subtitle>
      </mat-card-header>
      <mat-card-content>

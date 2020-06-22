@@ -8,30 +8,32 @@ import { ProfileService } from '../services/perfil.service';
   templateUrl: './trabajo-pendiente.component.html',
   styleUrls: ['./trabajo-pendiente.component.css']
 })
-export class TrabajoPendienteComponent implements OnInit {
+export class TrabajoPendienteComponent  {
 
-  trabajos: Presupuesto[] = []
-  
-  constructor(public trabajosServices: PresupuestoService,private profileService: ProfileService) { }
-
-  ngOnInit() {
+  trabajos: Presupuesto[]=[];
+  constructor(public trabajosServices: PresupuestoService,private profileService: ProfileService) {
     this.updateTrabajos()
-    console.log(this.trabajos)
+   }
+
+  ngOnInit():void {
+    console.log(this.trabajos)               
   }
 
   async getTrabajosClientes(){
     try{
     this.trabajos=await  this.trabajosServices.consultas()
+    console.log(this.trabajos)    
   } catch{
-     console.log('error en cargar lista')
+     console.log('error en cargar lista clientes')
    }
   }
 
   async getTrabajosTecnicos(){
     try{
     this.trabajos=await  this.trabajosServices.consultasTecnica()
+    console.log(this.trabajos)    
   } catch{
-     console.log('error en cargar lista')
+     console.log('error en cargar lista de tecnicos')
    }
   }
 
@@ -40,14 +42,25 @@ export class TrabajoPendienteComponent implements OnInit {
   }
 
   updateTrabajos(){
-    if(this.esCliente){
+    if(this.esProfesional()){
+      console.log('es profesional: ',this.esProfesional())
+      this.getTrabajosTecnicos()
+    }else{     
+      console.log('es cliente: ', this.esProfesional())
       this.getTrabajosClientes()
     }
-    this.getTrabajosTecnicos()
   }
 
   esCliente():boolean{
     this.profileService.tipo()
     return this.profileService.esCliente
+  }
+
+  esProfesional():boolean{
+      this.profileService.tipo()
+      if (this.profileService.esCliente){
+        return false
+      }
+      return true
   }
 }

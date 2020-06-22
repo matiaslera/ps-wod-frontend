@@ -34,8 +34,8 @@ async consultas(): Promise<Presupuesto[]>  {
     return basePresupuestos.map((pres) => Presupuesto.fromJson(pres));
   }
 
-async trabajoCompleto(id:number): Promise<Presupuesto>  {
-    const presupuesto = await this.http.get<Presupuesto[]>(REST_SERVER_URL + '/job_completo/'+id).toPromise();
+async trabajoCompleto(id:Number): Promise<Presupuesto>  {
+    const presupuesto = await this.http.get<Presupuesto>(REST_SERVER_URL + '/job_completo/'+id).toPromise();
     return Presupuesto.fromJson(presupuesto)
   }
 

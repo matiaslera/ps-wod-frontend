@@ -1,7 +1,14 @@
 <table>
     <mat-divider></mat-divider>
-    <h4 *ngIf="noTieneTrabajos()">  NOO TIENE CARGADO NINGUN PRESUPUESTO CARGADOS</h4>
-    <div *ngFor="let elemento of trabajos" [routerLink]="['../jobDetails', elemento.id]"> 
+    <h4 *ngIf="noTieneTrabajos() ">  NOO TIENE CARGADO NINGUN PRESUPUESTO CARGADOS</h4>
+  <div *ngIf="esCliente()">
+    <div *ngFor="let elemento of trabajos" [routerLink]="['../jobDetails', elemento.id]" > 
      <app-trabajo [consulta]="elemento"></app-trabajo>
    </div>
+  </div>
+  <div *ngIf="esProfesional()">
+   <div *ngFor="let elemento of trabajos" [routerLink]="['../jobAnswer', elemento.id]"> 
+    <app-trabajo [consulta]="elemento"></app-trabajo>
+  </div>
+</div>
 </table>

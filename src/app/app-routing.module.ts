@@ -8,6 +8,7 @@ import { PresupuestoComponent } from './presupuesto/presupuesto.component';
 import { TrabajoPendienteComponent } from './trabajo-pendiente/trabajo-pendiente.component';
 import { TrabajoTerminadoComponent } from './trabajo-terminado/trabajo-terminado.component';
 import { JobDetailsComponent } from './job-details/job-details.component';
+import { JobAnswerComponent } from './job-answer/job-answer.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
     {path: 'trabajoPendiente', component: TrabajoPendienteComponent},
     {path: 'trabajoTerminado', component: TrabajoTerminadoComponent},
     {path: 'jobDetails/:id', component: JobDetailsComponent},
+    {path: 'jobAnswer/:id', component: JobAnswerComponent},
     { path: '', redirectTo: 'presupuesto', pathMatch: 'full' },
      ] 
 },
