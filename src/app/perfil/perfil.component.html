@@ -1,9 +1,9 @@
 
 <div class="container"> 
    <h2> BIENVENIDO {{userName()}} A WOD (work of day)</h2>
+   
 
 
-</div>
 
 <div class="cardContainer">
    <mat-card class="dataCard" *ngIf="perfilData | async as perfilData;">
@@ -27,5 +27,5 @@
        <strong>Tipo: </strong>{{tipo()}}<br>
      </mat-card-content>
    </mat-card>
-  
+  </div>
  </div>
