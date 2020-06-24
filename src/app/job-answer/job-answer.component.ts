@@ -24,26 +24,24 @@ export class JobAnswerComponent{
       this.loadJob(routeParams.id)      
     })
     this.cargarData()
-    console.log(this.jobData)
     console.log(this.ofertaJob)
   }
 
   async loadJob(id){
     this.jobData = await this.jobService.trabajoCompleto(id)
+    console.log(this.jobData)
   }
 
   cargarData(){
+    this.ofertaJob.fechaCreada=new Date()
     this.ofertaJob.especialidad=this.user.getUser().especialidad
     this.ofertaJob.nombreApellido= this.user.getUser().nombreyApellido
     this.ofertaJob.idProfesional=this.user.getUserLoggedId()
-
   }
 
   async aceptar(){
     try{
       this.loadJob(this.id)
-      console.log(this.jobData.id)
-      console.log(this.ofertaJob)
       this.jobService.answerConsulta(this.ofertaJob,this.id)
       this.router.navigate(['home/trabajoPendiente'])
       console.log('se a enviado la respuesta del trabajo ', )

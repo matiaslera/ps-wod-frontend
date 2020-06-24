@@ -1,0 +1,33 @@
+
+
+    <div class="app-container">
+        <mat-card>
+          <mat-toolbar>
+            INFORMACION DEL TRABAJO A REALIZAR
+          </mat-toolbar><br>
+          <mat-card-content>
+         
+            <p>informacion acerca del la oferta propuesta por el tecnico,<br>
+            queda en su responsabilidad contratar sus servicios. <br></p>
+          </mat-card-content>
+        </mat-card><br>
+  
+        <mat-card>
+          <mat-card-content>
+            <ul>
+              <h5>  <p class="card-text"> <strong>Nombre:</strong> {{presupuesto.problema}}<br></p>
+                <p class="card-text"> <strong>Direccion: </strong>{{presupuesto.direccion}}<br></p>
+                <p class="card-text"><strong>Fecha de Creacion:</strong> {{fecha.year + "/" + fecha.monthValue + "/" + fecha.dayOfMonth}}<br></p>
+             <p class="card-text"><strong>Descripcion: </strong>{{presupuesto.direccion}}</p>
+              <p class="card-text"><strong>Comentarios: </strong> {{oferta.comentario}} </p>
+              <p class="card-text"><strong>Notas: </strong> {{presupuesto.notas}} </p>
+              <p class="card-text"><strong>Precio: $</strong> {{oferta.monto}} </p> </h5>
+          </ul>
+          </mat-card-content>
+          <mat-card-actions>
+            <button type="submit" class="btn btn-outline-primary" (click)="aceptar()">Aceptar</button> &nbsp;
+            <button type="submit" class="btn btn-outline-primary" (click)="cancelar()">Volver</button>
+          </mat-card-actions>
+        </mat-card>
+  
+      </div>

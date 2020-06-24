@@ -7,7 +7,7 @@
     src="../assets/martillo.png"
     width="50rem" routerLink="login"
   />
-  <span routerLink="home/perfil">Usuario</span>
+  <span [routerLink]="['home/perfil',loggedId()]">Usuario</span>
   <div class="spacer"></div>
 
   <span class="mainToolbarSpacer"></span>

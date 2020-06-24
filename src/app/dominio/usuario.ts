@@ -9,7 +9,8 @@ export class Usuario {
     telefono:number;
     foto:string;
     especialidad: string;  
-      
+    profesion: String;
+
     static fromJson(usuarioJSON): Usuario {
         return Object.assign(new Usuario(), usuarioJSON)
     }

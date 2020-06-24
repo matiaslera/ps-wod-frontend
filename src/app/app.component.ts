@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginService } from './services/login.service';
+import { isUndefined } from 'util';
 
 @Component({
   selector: 'app-root',
@@ -15,5 +16,11 @@ export class AppComponent {
   }
   loggedId(){
     return this.userLogService.getUserLoggedId()
+  }
+
+  nombre(){
+    if(!isUndefined(this.userLogService.getUser())){
+    return this.userLogService.getUser()}
+    //return "Usuario"
   }
 }

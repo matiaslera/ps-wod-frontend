@@ -23,7 +23,8 @@ import { TrabajoPendienteComponent } from './trabajo-pendiente/trabajo-pendiente
 import { TrabajoTerminadoComponent } from './trabajo-terminado/trabajo-terminado.component';
 import { JobDetailsComponent } from './job-details/job-details.component';
 import { JobAnswerComponent } from './job-answer/job-answer.component';
-
+import { ContratarComponent } from './contratar/contratar.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,9 @@ import { JobAnswerComponent } from './job-answer/job-answer.component';
     TrabajoPendienteComponent,
     TrabajoTerminadoComponent,
     JobDetailsComponent,
-    JobAnswerComponent
+    JobAnswerComponent,
+    ContratarComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -49,6 +52,7 @@ import { JobAnswerComponent } from './job-answer/job-answer.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
+    MatToolbarModule
   ],
   providers: [LoginService,ProfileService,PresupuestoService],
   bootstrap: [AppComponent]

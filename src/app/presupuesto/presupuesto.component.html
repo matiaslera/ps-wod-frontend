@@ -20,11 +20,11 @@
     <button type="submit" class="btn btn-outline-primary"  (click)="buscar()">Buscar</button>  &nbsp; 
     <button type="submit" class="btn btn-outline-primary" (click)="clear()" >Limpiar Campo </button> &nbsp;
     <button type="submit" class="btn btn-outline-primary"  (click)="create()" *ngIf="esCliente()" >Consultar Presupuesto </button>
+    <br>
+    <br>
     
-    
-    <div class="container m-1">
-      <div class="abs-center">
-        <table class="table table-sm table-dark">
+    <div class="table-responsive">
+        <table class="table table-md table-red table-striped table-hover table-condensed example-animate-container">
           <thead>
             <tr>
               <th scope="col">Nombre</th>
@@ -42,7 +42,6 @@
             </tr>
           </tbody>
         </table>
-      </div>
     </div>
     
     

@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { REST_SERVER_URL } from './configuration';
 import { Presupuesto } from '../dominio/problema';
 import { LoginService } from './login.service';
 import { Oferta } from '../dominio/oferta';
+import { Usuario } from '../dominio/usuario';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -35,9 +37,10 @@ async consultas(): Promise<Presupuesto[]>  {
     return basePresupuestos.map((pres) => Presupuesto.fromJson(pres));
   }
 
-async trabajoCompleto(id:Number): Promise<Presupuesto>  {
-    const presupuesto = await this.http.get<Presupuesto>(REST_SERVER_URL + '/job_completo/'+id).toPromise();
-    return Presupuesto.fromJson(presupuesto)
+async trabajoCompleto(id)  {
+  const json= await this.http.get<Presupuesto>(REST_SERVER_URL + '/job_completo/'+id).toPromise();
+  console.log(json)
+ return   Presupuesto.fromJson(json)
   }
 
 async consultasTecnica(): Promise<Presupuesto[]>  {
@@ -49,5 +52,12 @@ async consultasTecnica(): Promise<Presupuesto[]>  {
     let json = JSON.stringify(oferta) 
     console.log(json);
     await  this.http.post(REST_SERVER_URL + '/job_answer/' +id, json).toPromise()
-  } 
+  }
+  
+  async especialidad(especialidad:Usuario): Promise<Presupuesto[]> {
+    let json = JSON.stringify(especialidad)
+    console.log(json);
+    const basePresupuestos = await this.http.post<Presupuesto[]>(REST_SERVER_URL + '/prof_tecnica',json).toPromise();
+    return basePresupuestos.map((pres) => Presupuesto.fromJson(pres));
+  }
 }

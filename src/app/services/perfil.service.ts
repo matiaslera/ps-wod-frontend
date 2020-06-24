@@ -39,23 +39,31 @@ export class ProfileService {
   async update(){
     this.clientes=await this.getClientes()
     this.profesionales=await this.getProfesionales()
-    console.log(this.clientes.length)
-    console.log(this.profesionales.length)
+   // console.log(this.clientes.length)
+   // console.log(this.profesionales.length)
   }
+
+  async getProf(): Promise<Usuario> {
+    return (await this.httpCLient.get<Usuario>(REST_SERVER_URL + '/profesional/'+this.user.getUser().id).toPromise())
+ }
+
+ async getCliente(): Promise<Usuario> {
+ return (await this.httpCLient.get<Usuario>(REST_SERVER_URL + '/cliente/'+this.user.getUser().id).toPromise())
+}
 
   tipo(){
     if(!isUndefined(this.clientes)){
     var listCli =this.clientes.filter(a=>a.id==this.user.getUser().id)
       if(listCli.length!==0){
      this.esCliente=true
-     console.log(this.esCliente)
+     //console.log(this.esCliente)
     }
     }
     if(!isUndefined(this.profesionales)){
       var listPro =this.profesionales.filter(a=>a.id==this.user.getUser().id)
       if(listPro.length!==0){
          this.esCliente=false
-         console.log(this.esCliente)
+       //  console.log(this.esCliente)
         }
     }
    }
