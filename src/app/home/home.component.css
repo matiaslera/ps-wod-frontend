@@ -19,5 +19,14 @@
     }
 
 .sidenav{
-    background: rgb(255, 245, 160);
+    background-color:#472097
+    ;
+}
+
+.color{
+    color: white;
+}
+
+.mat-list-base .mat-list-item{
+    color: white!important;
 }

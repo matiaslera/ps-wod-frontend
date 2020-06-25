@@ -1,31 +1,28 @@
-<!-- Toolbar -->
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+</head>
+
+<!-- Toolbar -->
 <div class="toolbar" role="banner">
+
+    <div class= "nada"> 
+       <h4><i class="fa fa-cogs fa-2x" style="color:white;" routerLink="login"></i> </h4>
+
+    </div> 
+  <!--
   <img
     alt=" Logo"
     src="../assets/martillo.png"
     width="50rem" routerLink="login"
-  />
-  <span [routerLink]="['home/perfil',loggedId()]">Usuario</span>
+  />-->
+
+  <h1> <div [routerLink]="['home/perfil',loggedId()]">Usuario</div></h1> 
   <div class="spacer"></div>
-
-  <span class="mainToolbarSpacer"></span>
-  <!---span *ngIf="isLogged()"-->
-    <span *ngIf="false">
-    <a button routerLink="home">
-      Home
-    </a>
-    <a button [routerLink]="['/perfil',loggedId()]">
-      Perfil
-    </a>
-  </span>
-
-  
 </div>
-</nav>
 
 
-  <router-outlet></router-outlet>
-
+<router-outlet></router-outlet>
 
