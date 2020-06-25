@@ -11,6 +11,7 @@ import { JobDetailsComponent } from './job-details/job-details.component';
 import { JobAnswerComponent } from './job-answer/job-answer.component';
 import { ContratarComponent } from './contratar/contratar.component';
 import { TrabajoContratadoComponent } from './trabajo-contratado/trabajo-contratado.component';
+import { ChatListComponent } from './chat-list/chat-list.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
     {path: 'jobAnswer/:id', component: JobAnswerComponent},
     {path: 'contrato', component: ContratarComponent},
     {path: 'trabajoPendientes', component: TrabajoContratadoComponent},
+   // {path: 'chat/:id', component: ChatListComponent },
     { path: '', redirectTo: 'presupuesto', pathMatch: 'full' },
      ] 
 },

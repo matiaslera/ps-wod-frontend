@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -26,6 +28,12 @@ import { JobAnswerComponent } from './job-answer/job-answer.component';
 import { ContratarComponent } from './contratar/contratar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { TrabajoContratadoComponent } from './trabajo-contratado/trabajo-contratado.component';
+import { CHAT_SERVER_URL } from './services/configuration';
+
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { ChatListComponent } from './chat-list/chat-list.component';
+
+const config: SocketIoConfig = { url: CHAT_SERVER_URL, options: {} };
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +50,7 @@ import { TrabajoContratadoComponent } from './trabajo-contratado/trabajo-contrat
     JobAnswerComponent,
     ContratarComponent,
     TrabajoContratadoComponent,
+    ChatListComponent,
     
   ],
   imports: [
@@ -54,7 +63,8 @@ import { TrabajoContratadoComponent } from './trabajo-contratado/trabajo-contrat
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    MatToolbarModule
+    MatToolbarModule,
+    SocketIoModule.forRoot(config)
   ],
   providers: [LoginService,ProfileService,PresupuestoService],
   bootstrap: [AppComponent]

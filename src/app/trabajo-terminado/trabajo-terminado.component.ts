@@ -26,4 +26,7 @@ export class TrabajoTerminadoComponent implements OnInit {
    }
   }
 
+  noTieneTrabajos(){
+    return this.trabajos.length ===0
+  }
 }

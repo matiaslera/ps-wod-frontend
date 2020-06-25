@@ -1,11 +1,8 @@
 
 <div class="container"> 
-   <h2> BIENVENIDO {{userName()}} A WOD (work of day)</h2>
-   
+   <h2 class="hero"> Bienvenido {{userName()}} disfrute de su visita</h2>
 
-
-
-<div class="cardContainer">
+<div class="cardContainer" >
    <mat-card class="dataCard" *ngIf="perfilData | async as perfilData;">
      <img src="../../assets/perfil-avatar.jpg" width="250rem" *ngIf="!esProfesional()">
      <img src="../../assets/perfil-profe.jpg" width="250rem" *ngIf="esProfesional()">
@@ -28,4 +25,6 @@
      </mat-card-content>
    </mat-card>
   </div>
+
  </div>
+

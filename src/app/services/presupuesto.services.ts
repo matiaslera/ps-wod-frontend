@@ -77,5 +77,10 @@ async consultasTecnica(): Promise<Presupuesto[]>  {
     return basePresupuestos.map((pres) => Presupuesto.fromJson(pres));
   }
 
+  async finalizar(presupuesto:Presupuesto) {
+    let json = JSON.stringify(presupuesto)
+    console.log(json)
+     await this.http.post<Presupuesto[]>(REST_SERVER_URL + '/end_job',json).toPromise();
+  }
 
 }

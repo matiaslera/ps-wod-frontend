@@ -2,8 +2,10 @@
 
     <div>
         <label for=""> Hola <span class="spanStyle"> {{userChat.user}}</span> ...Escribe algo</label> &nbsp;
-        <button class="btn btn-md btn-primary " type="submit"  (click)="myMessage()">Enviar</button>
-        <input type="text" class="form-control"  [(ngModel)]="userChat.text">
+       
+        <div> <input type="text" class=" col-4"  [(ngModel)]="userChat.text">&nbsp;
+             <button class="btn btn-md btn-primary " type="submit"  (click)="myMessage()">Enviar</button>
+        </div>
     </div>
     <div class="mt-3">
         <div *ngFor="let a of myMessages">
@@ -14,3 +16,6 @@
     </div>
 
 </div>
+
+
+<!---textarea [(ngModel)]='document.doc' (keyup)='editDoc()' placeholder='Start typing...'></textarea-->

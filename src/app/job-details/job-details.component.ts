@@ -6,6 +6,7 @@ import { Presupuesto } from '../dominio/problema';
 import { ContratarComponent } from '../contratar/contratar.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Oferta } from '../dominio/oferta';
+import { LoginService } from '../services/login.service';
 
 
 export interface DialogJob {
@@ -21,8 +22,8 @@ export interface DialogJob {
 export class JobDetailsComponent {
 
    jobData: Presupuesto=new Presupuesto()
-
-  constructor(private jobService: PresupuestoService, private route: ActivatedRoute,private router: Router,public dialog: MatDialog) { }
+  id
+  constructor(private jobService: PresupuestoService, private route: ActivatedRoute,private router: Router,public dialog: MatDialog,private user:LoginService) { }
 
   ngOnInit():void {
     this.route.params.subscribe(routeParams => {
@@ -44,6 +45,10 @@ export class JobDetailsComponent {
    // this.router.navigate(['home/contrato'])
     //ingresar a una nueva pagina con los detalles del trabajo
     //donde me salga para aceptar o cancelar
+  }
+
+  getId(){
+    return this.user.getUserLoggedId()
   }
  
 }

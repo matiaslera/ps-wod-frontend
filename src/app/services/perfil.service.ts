@@ -51,6 +51,12 @@ export class ProfileService {
  return (await this.httpCLient.get<Usuario>(REST_SERVER_URL + '/cliente/'+this.user.getUser().id).toPromise())
 }
 
+ async getProfesional(id:number){
+  const json= await this.httpCLient.get<Usuario>(REST_SERVER_URL + '/profesional/'+id).toPromise();
+  console.log(json)
+  return   Usuario.fromJson(json)
+ }
+
   tipo(){
     if(!isUndefined(this.clientes)){
     var listCli =this.clientes.filter(a=>a.id==this.user.getUser().id)

@@ -1,34 +1,49 @@
-    
-<div class="container">
-    <div class=" justify-content-center">
-		<div class="card"> 
-			<div class="card-header">
-				<h3>Iniciar sesion</h3>
-			</div>
-    <form action="action_page.php" [formGroup]="loginForm">
-        <div class="imgcontainer">
-          <img     src="../../assets/wod.jpg" width="250rem"
-          alt="Avatar" class="avatar">
-        </div>
+<div class="contenedorCentrado">
+  <div class="cuadroDeLogueo">
+      <div class="layoutvertical centradoFlex">    
+     
+
+              <div class="centradoMarge">    
+                
+                    <div class="imgcontainer">
+                      <img     src="../../assets/trabajo.png" width="250rem" >
+                    </div>
+                
+              </div>
+            
+              <form action="action_page.php" [formGroup]="loginForm">
+
+
+        
+                <div class="form-group layoutHorizontal">
+                      <div>
+                        <label for="uname"><b>Usuario</b></label>
+                      </div>  
+                      <div class="transparente">
+                        <input type="text" class="form-control" placeholder="Ingrese usuario" formControlName="username" [(ngModel)]="userCredentials.usuario">   
+                      </div>  
+                </div>
+          
+                <div class="form-group layoutHorizontal">
+                          <div>
+                            <label for="psw"><b>Contraseña</b></label>
+                          </div>  
+                          <div class="transparente">
+                            <input type="password" class="form-control" placeholder="Ingrese contraseña" formControlName="password" [(ngModel)]="userCredentials.contrasenia">
+                          </div>
+
+                            <button class="btn btn-lg btn-primary btn-block" type="submit"  (click)="authenticate()" [disabled]="formHasData()" >Ingresar</button>
+                            <label>
+                              <input type="checkbox" checked="checked" name="remember"> Recordar
+                            </label>
+                </div>      
+       
       
-        <div >
-          <label for="uname"><b>Usuario</b></label>
-          <input type="text" class="form-control" placeholder="username" formControlName="username" [(ngModel)]="userCredentials.usuario">		
-      
-          <label for="psw"><b>Contraseña</b></label>
-          <input type="password" class="form-control" placeholder="password" formControlName="password" [(ngModel)]="userCredentials.contrasenia">
-      
-          <button class="btn btn-lg btn-primary btn-block" type="submit"  (click)="authenticate()" [disabled]="formHasData()" >Ingresar</button>
-          <label>
-            <input type="checkbox" checked="checked" name="remember"> Recordar
-          </label>
-        </div>
-      
-        <!--div class="container" style="background-color:#f1f1f1">
-          <button type="button" class="cancelbtn">Cancelar</button>
-          <span class="psw">Olvido su <a href="#">Contraseña?</a></span>
-        </div--->
-      </form>
-    </div>
-    </div>
-    </div>
+                  <!--div class="container" style="background-color:#f1f1f1">
+                    <button type="button" class="cancelbtn">Cancelar</button>
+                    <span class="psw">Olvido su <a href="#">Contraseña?</a></span>
+                  </div--->
+              </form>    
+    </div>    
+  </div>
+</div>    

@@ -9,7 +9,7 @@ import { PresupuestoService } from '../services/presupuesto.services';
 })
 export class TrabajoContratadoComponent implements OnInit {
 
-  trabajos: Presupuesto[] = []
+  trabajos: Presupuesto[]=[]
   imagen= "../../assets/pendiente.jpg"
   constructor(public trabajoServices: PresupuestoService) { }
 
@@ -21,9 +21,14 @@ export class TrabajoContratadoComponent implements OnInit {
   async getTrabajos(){
     try{
     this.trabajos=await  this.trabajoServices.trabajosPendientes()
+    console.log(this.trabajos)
   } catch{
      console.log('error en cargar lista')
    }
+  }
+
+  noTieneTrabajos(){
+    return this.trabajos.length ===0
   }
 
 }
