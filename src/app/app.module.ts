@@ -25,6 +25,7 @@ import { JobDetailsComponent } from './job-details/job-details.component';
 import { JobAnswerComponent } from './job-answer/job-answer.component';
 import { ContratarComponent } from './contratar/contratar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { TrabajoContratadoComponent } from './trabajo-contratado/trabajo-contratado.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     JobDetailsComponent,
     JobAnswerComponent,
     ContratarComponent,
+    TrabajoContratadoComponent,
     
   ],
   imports: [

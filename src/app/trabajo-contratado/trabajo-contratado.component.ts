@@ -3,14 +3,14 @@ import { Presupuesto } from '../dominio/problema';
 import { PresupuestoService } from '../services/presupuesto.services';
 
 @Component({
-  selector: 'app-trabajo-terminado',
-  templateUrl: './trabajo-terminado.component.html',
-  styleUrls: ['./trabajo-terminado.component.css']
+  selector: 'app-trabajo-contratado',
+  templateUrl: './trabajo-contratado.component.html',
+  styleUrls: ['./trabajo-contratado.component.css']
 })
-export class TrabajoTerminadoComponent implements OnInit {
+export class TrabajoContratadoComponent implements OnInit {
 
   trabajos: Presupuesto[] = []
-  imagen= "../../assets/terminado.jpg"
+  imagen= "../../assets/pendiente.jpg"
   constructor(public trabajoServices: PresupuestoService) { }
 
   ngOnInit() {
@@ -20,7 +20,7 @@ export class TrabajoTerminadoComponent implements OnInit {
 
   async getTrabajos(){
     try{
-    this.trabajos=await  this.trabajoServices.trabajosTerminado()
+    this.trabajos=await  this.trabajoServices.trabajosPendientes()
   } catch{
      console.log('error en cargar lista')
    }

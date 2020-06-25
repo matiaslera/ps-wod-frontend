@@ -37,7 +37,7 @@
             <tr *ngFor="let problema of problemas">
               <td>{{problema.problema}}</td>
               <td>{{problema.especialidad}}</td>
-              <td>{{problema.fecha.year + "/" + problema.fecha.monthValue + "/" + problema.fecha.dayOfMonth  }}</td>
+              <td>{{problema.fecha| date: 'dd/MM/yyyy' }}</td>
               <td>{{problema.monto | currency: 'USD' }}</td>
             </tr>
           </tbody>

@@ -14,6 +14,7 @@ export class TrabajoPendienteComponent  {
 
   usuario: Usuario= new Usuario
   trabajos: Presupuesto[]=[];
+  imagen= "../../assets/pendiente.jpg"
   constructor(public trabajosServices: PresupuestoService,private profileService: ProfileService,private user: LoginService) {
     this.updateTrabajos()
    }

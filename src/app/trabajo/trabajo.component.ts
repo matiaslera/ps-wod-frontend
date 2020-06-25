@@ -10,7 +10,7 @@ export class TrabajoComponent implements OnInit {
 
 
   @Input() consulta: Presupuesto
-  @Input() reservacion:boolean
+  @Input() imagen:String
   constructor() { }
 
   ngOnInit(): void {

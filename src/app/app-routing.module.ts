@@ -10,6 +10,7 @@ import { TrabajoTerminadoComponent } from './trabajo-terminado/trabajo-terminado
 import { JobDetailsComponent } from './job-details/job-details.component';
 import { JobAnswerComponent } from './job-answer/job-answer.component';
 import { ContratarComponent } from './contratar/contratar.component';
+import { TrabajoContratadoComponent } from './trabajo-contratado/trabajo-contratado.component';
 
 
 const routes: Routes = [
@@ -20,11 +21,12 @@ const routes: Routes = [
     {path: 'perfil/:id', component: PerfilComponent },
     {path: 'chat/:id', component: ChatComponent },
     {path: 'presupuesto', component: PresupuestoComponent },
-    {path: 'trabajoPendiente', component: TrabajoPendienteComponent},
+    {path: 'trabajoConsultas', component: TrabajoPendienteComponent},
     {path: 'trabajoTerminado', component: TrabajoTerminadoComponent},
     {path: 'jobDetails/:id', component: JobDetailsComponent},
     {path: 'jobAnswer/:id', component: JobAnswerComponent},
     {path: 'contrato', component: ContratarComponent},
+    {path: 'trabajoPendientes', component: TrabajoContratadoComponent},
     { path: '', redirectTo: 'presupuesto', pathMatch: 'full' },
      ] 
 },

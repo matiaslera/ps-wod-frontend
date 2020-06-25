@@ -29,7 +29,7 @@
           <td class="col-xs-4">{{oferta.nombreApellido}}</td>
           <td class="col-xs-2">user{{oferta.idProfesional - 1}}</td>
           <td class="col-xs-3">{{oferta.monto}}</td>
-          <td class="col-xs-2">{{oferta.fechaCreacion.year + "/" + oferta.fechaCreacion.monthValue + "/" + oferta.fechaCreacion.dayOfMonth}}</td> 
+          <td class="col-xs-2">{{oferta.fechaCreacion| date: 'dd/MM/yyyy' }}</td> 
           <td class="col-xs-3"> <button type="button" class="btn btn-default" (click)="contratar(oferta)">
             <mat-icon>gavel</mat-icon>
           </button>
