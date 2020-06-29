@@ -13,13 +13,15 @@ export class WebSocketService {
 
     socket: any;
     server = CHAT_SERVER_URL
-    currentDocument = this.socket2.fromEvent<Document>('document');
-    documents = this.socket2.fromEvent<string[]>('documents');  
-    
+    //currentDocument = this.socket2.fromEvent<Document>('document');
+    //documents = this.socket2.fromEvent<string[]>('documents');  
+    registro= "registerUser"
+    loginUser = "loginUser"
+    enviarMensaje="sendAnotherUserAMessage"
   constructor(private http: HttpClient,private socket2: Socket) {
     this.socket = io(this.server)
   }
-
+  //en uso
   listen(eventName: String){
       return new Observable((Subscriber)=> {
           this.socket.on(eventName,(data)=> {
@@ -27,26 +29,30 @@ export class WebSocketService {
           })
       })
   }
-
+  //usando
   emit(eventName: String, data: any){
       this.socket.emit(eventName,data)
   }
 
-  register(eventName: String, id: any){
-    this.socket.set(eventName,id)
+  register( id: any){
+    this.socket.set(this.registro,(data)=> {
+      data.name="matias"
+      data.mensaje="hola"
+  })
   }
 
-  login(eventName: String, id: any){
-    this.socket.get(eventName,id)
+  login( id: any){
+    this.socket.get(this.loginUser,(data)=> {
+    })
   }
   
-  sendMsg(eventName: String, id: any){
+  enviarMsg(eventName: String, id: any){
     this.socket.to(eventName,id)
   }
 
 
   
-
+/*
   getDocument(id: string) {
     this.socket.emit('getDoc', id);
   }
@@ -68,5 +74,5 @@ export class WebSocketService {
     }
 
     return text;
-  }
+  }*/
 }

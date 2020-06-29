@@ -10,7 +10,7 @@ import { startWith } from 'rxjs/operators';
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })
-export class ChatComponent implements OnInit, OnDestroy {
+export class ChatComponent implements OnInit {
 
   userChat = {
     user:'',
@@ -18,23 +18,20 @@ export class ChatComponent implements OnInit, OnDestroy {
   }
   myMessages;
   eventName= "send-message"
-  registro= "registerUser"
-  login = "loginUser"
-  enviarMensaje="sendAnotherUserAMessage"
-  document: Document;
-  documents: Observable<string[]>;
-  currentDoc: string;
+  //document: Document;
+  //documents: Observable<string[]>;
+  //currentDoc: string;
   private _docSub: Subscription;
 
   constructor(private activated:ActivatedRoute, private webService:WebSocketService) { }
 
-  ngOnDestroy() {
-  //  this._docSub.unsubscribe();
+ /* ngOnDestroy() {
+  this._docSub.unsubscribe();
   }
 
   editDoc() {
     this.webService.editDocument(this.document);
-  }
+  }*/
   
   ngOnInit(): void {
    /* this._docSub = this.webService.currentDocument.pipe(
@@ -51,16 +48,21 @@ export class ChatComponent implements OnInit, OnDestroy {
     this.webService.emit(this.eventName,this.userChat)
     this.userChat.text= ''
   }
-/*
+
   registar(){
     const id = this.activated.snapshot.params.id;
-    this.webService.register(this.registro,id)
+    this.webService.register(id)
   }
 
   logearse(){
     const id = this.activated.snapshot.params.id;
-    this.webService.login(this.login,id)
+    this.webService.login(id)
   }
+
+
+
+/*
+ 
 
   enviarMsg(){
     const id = this.activated.snapshot.params.id;

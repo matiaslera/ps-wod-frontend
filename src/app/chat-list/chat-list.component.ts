@@ -15,8 +15,8 @@ export class ChatListComponent implements OnInit , OnDestroy {
   constructor(private documentService: WebSocketService) { }
 
   ngOnInit() {
-    this.documents = this.documentService.documents;
-    this._docSub = this.documentService.currentDocument.subscribe(doc => this.currentDoc = doc.id);
+    //this.documents = this.documentService.documents;
+    //this._docSub = this.documentService.currentDocument.subscribe(doc => this.currentDoc = doc.id);
   }
 
   ngOnDestroy() {
@@ -24,11 +24,11 @@ export class ChatListComponent implements OnInit , OnDestroy {
   }
 
   loadDoc(id: string) {
-    this.documentService.getDocument(id);
+  //  this.documentService.getDocument(id);
   }
 
   newDoc() {
-    this.documentService.newDocument();
+  //  this.documentService.newDocument();
   }
 
 }

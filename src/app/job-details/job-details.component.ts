@@ -7,6 +7,7 @@ import { ContratarComponent } from '../contratar/contratar.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Oferta } from '../dominio/oferta';
 import { LoginService } from '../services/login.service';
+import { isUndefined } from 'util';
 
 
 export interface DialogJob {
@@ -49,6 +50,12 @@ export class JobDetailsComponent {
 
   getId(){
     return this.user.getUserLoggedId()
+  }
+
+  userName(){
+    if(!isUndefined(this.user.getUser())){
+      return this.user.getUser().nombreyApellido
+  }
   }
  
 }
